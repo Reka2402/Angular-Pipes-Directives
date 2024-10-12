@@ -1,0 +1,21 @@
+.label1{
+    position: absolute;
+    background-color: green;
+    color: white;
+    width: 90px;
+    margin-top: 20px;
+    padding:5px;
+    text-align: center;
+
+}
+
+.label2{
+    position: absolute;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    width:110px;
+    margin-top:20px;
+    padding:5px;
+    text-align: center;
+}

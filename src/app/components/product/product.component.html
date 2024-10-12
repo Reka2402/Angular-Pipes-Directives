@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+      <h4 style="margin-left: 1%; margin-top: 10px">New Products</h4>
+        <div class="card d-flex w-25 p-3" style="width: 150px;" *ngFor="let item of productItems">
+          <img [src]="item.images[0]"  style="width: 100%;height: 100%;"    class="card-img-top" alt="..." />
+          <button type="button" [ngClass]="item.availableQty !== 0? 'bg-success' : 'bg-danger'" class=" btn position-absolute mt-4 rounded-end-3 p-1 fw-bolder text-light">
+         
+            <p class="m=0 p=0">
+              {{ item.availableQty !== 0 ? "InStock" : "outofstock" }}
+            </p>
+         
+          </button>
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <button type="button" class="btn btn-info text-white">Price {{item.price }}</button><br>
+            <i class="card-text fa-solid fa-star" style ="color:rgb(159, 159, 61)" *ngFor="let S of [0] .constructor(item.rating)"></i>
+            <p class ="card-text">{{item.description}}</p>
+            <button type="button" class="btn btn-primary" (click)="addToCart(item)" >Add to Cart</button>
+            <div class="text-primary position-absolute bottom-1 end-0 "data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="selectedProduct = item " >View More</div>
+          </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal -->
+<app-product-popup [product] = "selectedProduct"></app-product-popup>
+
+
+
